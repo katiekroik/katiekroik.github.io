@@ -1,0 +1,56 @@
+body {
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+    background: #8080801c;
+}
+
+div {
+	display: inline-block;
+}
+
+a {
+	padding-left: 70%;
+}
+
+.commits {
+	width: 100%
+}
+
+.commit {
+	position: relative;
+	margin: 0;
+	padding-left: 30%;
+	width: 25%;
+    margin: .3em 0em 3em 0em;
+}
+
+.commitHash {
+	color: #200abd;
+}
+
+.commitDetails {
+	color: #2b2b2db5;
+}
+
+.command {
+	margin: 1em 1em 1em 0em;
+	font-weight: 500;
+}
+
+.commit_msg {
+	position: absolute;
+    vertical-align: middle;
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+p {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-size: 14px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	margin: 0;
+}
