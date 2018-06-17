@@ -3,7 +3,8 @@ body {
 	font-variant: normal;
 	font-weight: 500;
     font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-    background: #8080801c;
+    background: #b7b7b7;
+    color: #102bbf;
 }
 
 div {
@@ -27,11 +28,11 @@ a {
 }
 
 .commitHash {
-	color: #200abd;
+	color: #f7f7f7;
 }
 
 .commitDetails {
-	color: #2b2b2db5;
+	color: #14882e;
 }
 
 .command {
@@ -44,6 +45,19 @@ a {
     vertical-align: middle;
     margin-top: 1em;
     margin-left: 1em;
+}
+
+.comm2 {
+	color: #14882e;
+}
+
+.comm3 {
+	color: #ab8d32;
+}
+
+.star {
+	color: #f7f7f7;
+
 }
 
 p {
