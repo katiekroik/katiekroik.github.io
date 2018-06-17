@@ -12,7 +12,7 @@ div {
 }
 
 a {
-	padding-left: 70%;
+	padding-left: 65%;
 }
 
 .commits {
@@ -58,6 +58,14 @@ a {
 .star {
 	color: #f7f7f7;
 
+}
+
+.cmd {
+	color: black;
+}
+
+.chart {
+	color: #276d3d;
 }
 
 p {
