@@ -1,0 +1,160 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Katie Kroik Lifshitz</title>
+  <link rel="stylesheet" type="text/css" href="log.css" />
+
+  <script>
+    window.onload = function() {
+    	var commitHashes = document.getElementsByClassName("commitHash");
+    	for (var i = 0; i < commitHashes.length; i++) {
+    		commitHashes[i].innerHTML += getCommitHash()
+    	}
+    }
+
+    function getCommitHash() {
+    	var str = ""
+    	var numTimes = 40;
+    	var isInt = false;
+    	while (numTimes > 0) {
+    		nums = getRandomInt(2) + 1
+    		for (var i = 0; i < nums; i++) {
+    			if (isInt) {
+    				str += getRandomInt(10)
+    			} else {
+    				var num = getRandomInt(26)
+    				var charCode = String.fromCharCode(97 + num);
+    				str += charCode
+    			}
+    			numTimes--
+    		}
+			isInt = !isInt;
+    	}
+    	return str
+    }
+
+    function getRandomInt(max) {
+  		return Math.floor(Math.random() * Math.floor(max));
+	}
+  </script>
+</head>
+<body>
+	<div class="commits">
+		<span class="cmd">>> </span><div class="command">cat summary.txt</div><a href="index.html">official resume here</a><p></p>
+		<span class="chart">Software Developer, currently working at Citigroup on the Algo Market Maker.</span>
+		<p></p>
+		<span class="chart">For a more official resume, click the link on the right.</span>
+		<p></p>
+
+		<span class="cmd">>> </span><div class="command"> cat skills.txt</div>
+		<p></p>
+		<div class="commitDetails">
+			<span>||||</span><p></p>
+			<span>||||</span><p></p>
+			<span>|||| &nbsp;&nbsp; |||| &nbsp;&nbsp;&nbsp; ||||</span><p></p>
+			<span>|||| &nbsp;&nbsp; |||| &nbsp;&nbsp;&nbsp; |||| &nbsp;&nbsp; ||||</span><p></p>
+			<span>|||| &nbsp;&nbsp; |||| &nbsp;&nbsp;&nbsp; |||| &nbsp;&nbsp; |||| &nbsp;&nbsp; ||||</span><p></p>
+			<span>|||| &nbsp;&nbsp; |||| &nbsp;&nbsp;&nbsp; |||| &nbsp;&nbsp; |||| &nbsp;&nbsp; ||||</span><p></p>
+			<span>|||| &nbsp;&nbsp; |||| &nbsp;&nbsp;&nbsp; |||| &nbsp;&nbsp; |||| &nbsp;&nbsp; ||||</span><p></p>
+			<span>|||| &nbsp;&nbsp; |||| &nbsp;&nbsp;&nbsp; |||| &nbsp;&nbsp; |||| &nbsp;&nbsp; ||||</span>
+			<p></p>
+			<span class="chart">Java &nbsp;&nbsp; Python &nbsp;&nbsp; JS &nbsp;&nbsp;&nbsp; Scala &nbsp;&nbsp;&nbsp; C</span>
+		</div>
+		<p></p>
+
+		<span class="cmd">>> </span><div class="command"> git log --graph</div>
+		<p></p>
+		<span class="star">*</span><span class="commitHash"> commit </span><p></p>
+		<span>| </span><span class="commitDetails">Author: katiekroik@gmail.com</span><p></p>
+		<span>| </span><span class="commitDetails">Date:   September 2013 -0400</span><p></p>
+		<span>| </span><p></p>
+		<span>| Initial commit </span><p></p>
+		<span>| </span><p></p>
+
+		<span>| \</span><p></p>
+		<span>| </span><span class="star">*</span><span class="commitHash"> commit </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="commitDetails">Author: katiekroik@gmail.com</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="commitDetails">Date:   September 2013 -0400</span><p></p>
+		<span>| </span><span class="comm2">| </span><p></p>
+		<span>| </span><span class="comm2">| </span><span>NYU - Began NYU as a Piano Performance major with an interest in technology.</span><p></p>
+		<span>| </span><span class="comm2">| </span><p></p>
+
+		<span>| </span><span class="star">*</span><span class="commitHash"> commit </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="commitDetails">Author: katiekroik@gmail.com</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="commitDetails">Date:   February 2014 -0400</span><p></p>
+		<span>| </span><span class="comm2">| </span><p></p>
+		<span>| </span><span class="comm2">| </span><span>NYU, Technology Security Services </span><p></p>
+		<span>| </span><span class="comm2">| </span><span>Worked in a small team of 5 to monitor NYU's network to detect viruses and configure forensic hardware</span><p></p>
+		<span>| </span><span class="comm2">| </span><p></p>
+
+		<span>| </span><span class="star">* </span><span class="commitHash"> commit </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="commitDetails">Author: katiekroik@gmail.com</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="commitDetails">Date:   February 2015 -0400</span><p></p>
+		<span>| </span><span class="comm2">| </span><p></p>
+		<span>| </span><span class="comm2">| </span><span>NYU - officially switched to Computer Science. </span><p></p>
+		<span>| </span><span class="comm2">| </span><p></p>
+
+		<span>| </span><span class="comm2">| </span><span class="comm3"> \</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="star">*</span><span class="commitHash"> commit </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span>	<p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span class="commitDetails">Author: katiekroik@gmail.com</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span class="commitDetails">Date:   June 2015 -0400</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span>Citigroup, Client Insight</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span> - Created modular charts that displayed client data in a modular fashion. </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">/ </span><p></p>
+		<span>| </span><span class="comm2">/ </span><p></p>
+		<span>| </span><p></p>
+
+		<span class="star">* </span><span class="commitHash"> commit </span><p></p>
+		<span>| </span><span class="commitDetails">Author: katiekroik@gmail.com</span><p></p>
+		<span>| </span><span class="commitDetails">Date:   May 2016 -0400</span><p></p>
+		<span>| </span><p></p>
+		<span>| </span><span>Merge pull request #3 </span><p></p>
+		<span>| </span><span>Graduated NYU with a major in Computer Science and minor in Music. </span><p></p>
+		<span>| </span><span>   - Basic Algorithms </span><p></p>
+		<span>| </span><span>   - Calc I and II </span><p></p>
+		<span>| </span><span>   - Discrete Mathematics </span><p></p>
+		<span>| </span><span>   - Linear Algebra </span><p></p>	
+		<span>| </span><span>   - Operating Systems </span><p></p>	
+		<span>| </span><span>   - Applied Internet Technology </span><p></p>	
+		<span>| </span><p></p>
+
+		<span>| </span><span class="comm2">\ </span><p></p>
+		<span>| </span><span class="star">*</span><span class="commitHash"> commit </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="commitDetails">Author: katiekroik@gmail.com</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="commitDetails">Date:   June 2016 -0400</span><p></p>
+		<span>| </span><span class="comm2">| </span><span>Began two year Technology Analyst program at Citigroup. </span><p></p>
+		<span>| </span><span class="comm2">| </span><p></p>
+
+		<span>| </span><span class="comm2">| </span><span class="comm3">\ </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="star">*</span><span class="commitHash"> commit </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span class="commitDetails">Author: katiekroik@gmail.com</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span class="commitDetails">Date:   June 2016 -0400</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span>Citigroup, Credit eTrading </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span> - Built a offering service that sends live prices to various exchanges for Credit instruments. </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span>  - Helped create an auto executor component that makes decisions on trades based on certain conditions. </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><p></p>
+
+		<span>| </span><span class="comm2">| </span><span class="star">*</span><span class="commitHash"> commit </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span class="commitDetails">Author: katiekroik@gmail.com</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span class="commitDetails">Date:   September 2017 -0400</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span>Citigroup, Rates Distribution</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span>  - Improved auto response performance by 400% for the US Treasury desk. </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span>  - Enhanced streaming and trading components for the US Swaps, Agency, MBS, and Treasury desks. </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><span>  - Updated gateways and internal components to abide by MiFID II standards. </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">| </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="comm3">/ </span><p></p>
+		<span>| </span><span class="comm2">| </span><p></p>
+
+		<span>| </span><span class="star">*</span><span class="commitHash"> commit </span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="commitDetails">Author: katiekroik@gmail.com</span><p></p>
+		<span>| </span><span class="comm2">| </span><span class="commitDetails">Date: July 2018 -0400</span><p></p>
+		<span>| </span><span class="comm2">| </span><span>Merge commit: Finished Analyst Program at Citigroup.</span><p></p>
+		<span>| </span><span class="comm2">| </span><span>Started working on the Algo Market Maker team for Credit eTrading.</span><p></p>
+
+	</div>
+</body>
+</html>
