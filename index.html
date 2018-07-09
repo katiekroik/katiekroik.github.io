@@ -43,7 +43,13 @@ body{font-size:18px;}
 }
 }
 </style>
-<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+<script type="text/javascript">
+window.onload = function() {
+
+}
+</script>
+
 <script type="text/javascript">
 (function(){
   function loadScript(url, callback){  //lifted from Nick Zakas
@@ -69,6 +75,8 @@ body{font-size:18px;}
   function afterLoad() {
 	loadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js", afterJQLoad);
 	loadScript("http://www.google-analytics.com/ga.js", google);
+  loadScript("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js", afterChart);
+
   }
   //stuff to do after jQuery is loaded
   function afterJQLoad(){
@@ -111,6 +119,76 @@ body{font-size:18px;}
     window.attachEvent("onload", afterLoad);
   } else {
     window.onload = afterLoad;
+  }
+
+  function afterChart() {
+    var data = {
+      labels: ['Python', 'Java', 'C', 'JavaScript', 'Scala'],
+      datasets: [{
+        backgroundColor: '#8bb8ef',
+        data: [
+          6, 8, 4, 6, 5, 0
+        ]
+      }]
+    }
+
+    options = {
+      title: {
+          display: true,
+          text: 'Languages'
+        },
+        legend: {
+            display: false
+         },
+         scales: {
+            xAxes: [{
+                display: false
+            }]
+        }
+    }
+    var ctx = document.getElementById("langChart");
+    ctx.height = 86;
+
+    var myBarChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: data,
+        options: options
+    });
+
+   data = {
+      labels: ['Redis', 'JMS', 'ION', 'MongoDB', 'Sybase', 'Linux', 'Git'],
+      datasets: [{
+        backgroundColor: '#9cd38b',
+        data: [
+          7, 8, 7, 5, 6, 7, 8, 0
+        ]
+      }]
+    }
+
+    options = {
+      title: {
+          display: true,
+          text: 'Tools'
+        },
+        legend: {
+            display: false
+         },
+         scales: {
+            xAxes: [{
+                display: false
+            }]
+        }
+    }
+
+    var ctx = document.getElementById("toolsChart");
+    ctx.height = 116;
+
+    myToolsChart = new Chart(ctx, {
+        type: 'horizontalBar',
+        data: data,
+        options: options
+    });
+  
   }
 })();
 </script>
@@ -216,7 +294,11 @@ body{font-size:18px;}
 
 <section>
   <h2>Skills</h2>
-  <article class="skills">
+
+  <canvas id="langChart"></canvas>
+  <canvas id="toolsChart"></canvas>
+
+<!--   <article class="skills">
     <strong>Strong skills</strong>
     <p>Java 8, Python</span>
   </article>
@@ -231,7 +313,7 @@ body{font-size:18px;}
     <p>Redis, JMS, ION, MongoDB, Sybase, <br>
     Linux, Windows, Git, TeamCity, uDeploy, <br>
     IntelliJ, Eclipse, JIRA, Agile, Scrum</p>
-  </article>
+  </article> -->
 
 </section>
 
