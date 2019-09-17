@@ -1,328 +1,229 @@
-<!doctype html>
-<html lang=en>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta charset="utf-8" />
-<meta name="verify-v1" content="91yIG+EaOdwKuPX+R9ChHEWVXJ6wdQsq0gqD1c1sbaY="/>
-<title>Katie Kroik Lifshitz</title>
-<style type="text/css">
-body{font-family:Geneva, Arial, Helvetica, sans-serif;font-size:12px;font-weight:normal;color:#000000;text-align:center;margin:0;padding:0;line-height:1.5em;}
-header, section, article{display:block;}
-header{text-align:center;position:relative;z-index:1;}
-section{margin:20px 0 10px;padding:0;}
-p{margin-top:0;padding:0;}
-ul, ol{margin:10px 0 0;padding:0;}
-h1{margin:5px;font-size:2em;font-weight:bold;}
-h2{font-size:1.4em;font-style:italic;font-weight:bold;margin:5px 0;}
-h5{margin:20px 0 10px;font-size:1.2em;font-weight:bold;}
-a, a:link, a:visited{border:medium none;text-decoration:none;color:#009;cursor:pointer;}
-#resumecontainer{background-color:#F6F6F6;text-align:left;padding:20px;margin:20px auto;min-width:300px;max-width:600px;position:relative;}
-header p{margin:5px;}
-#links img{border:0 none;}
-.skills{margin:10px 10px;}
-.project{margin:10px 0 20px 10px;}
-section > p, section > article{margin:5px 0 0 10px;}
-#skills_section{position:relative;z-index:0;}
-#body_popup{position:absolute;left:0;top:0;z-index:1000;display:none;background-color:#FFFFFF;border:1px solid #000;padding:20px;min-width:300px;max-width:440px;text-align:left;}
-a:hover{text-decoration:none;color:#03F;}
-.close{display:block;float:right;}
-li{margin-left:5px;list-style-position:inside;list-style-type:circle;padding-left:0}
-ol > li{list-style-position:inside;list-style-type:decimal;margin-bottom:10px;margin-left:0;}
-#links{position:absolute;top:0;right:0;width:60px;}
-.formats{display:inline-block;height:16px;width:16px;background:url(img/links.png) no-repeat;}
-#doc{background-position:0 0;}
-#txt{background-position:0 -52px;}
-#pdf{background-position:0 -26px;}
-.indent{margin-left:20px;}
-@media only screen and (max-device-width: 480px) {
-body{font-size:18px;}
-#resumecontainer{padding:20px;margin:20px;max-width:1000px;}	
-#body_popup{max-width:1000px;}
-.right{float: right}
-.proj_link {
-  color: #2222c1 !important;
-}
-}
-</style>
 
-<script type="text/javascript">
-window.onload = function() {
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-}
-</script>
+  <title>Resume - Start Bootstrap Theme</title>
 
-<script type="text/javascript">
-(function(){
-  function loadScript(url, callback){  //lifted from Nick Zakas
-    var script = document.createElement("script")
-    script.type = "text/javascript";
-    if (script.readyState){  //IE
-      script.onreadystatechange = function(){
-        if (script.readyState == "loaded" ||
-          script.readyState == "complete"){
-          script.onreadystatechange = null;
-          callback();
-        }
-      };
-    }else{  //Others
-      script.onload = function(){
-        callback();
-      };
-    }
-    script.src = url;
-    document.body.appendChild(script);
-  }
-  //libraries to load after document.load event
-  function afterLoad() {
-	loadScript("http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js", afterJQLoad);
-	loadScript("http://www.google-analytics.com/ga.js", google);
-  loadScript("https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js", afterChart);
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  }
-  //stuff to do after jQuery is loaded
-  function afterJQLoad(){
-    var details = '',
-      coords = {left:'0px', top:'0px'},
-      close = function(){
-        details = '';
-        $("#body_popup > div.temp").remove();
-	    $("#body_popup").css({left:'0px', top:'0px'}).hide();
-      };
-    $(".details, .notice").click(function(e){  
-      var $target = $(this),
-	    coords = {left:'10px', top:e.pageY + 'px'};
-	  if(details !== ''){ 
-	    close();
-	  }
-	  details = $(this.rel).html();
-	  var id = ($target.hasClass("details")) ? "#skills_popup" : "#notice_popup";
-	  $("#body_popup").append(details).css(coords).show();
-    });
-    $(".close").click(function(){
-	  close();
-    });
-    $(".external").on('click', function(){
-      var url = this.rel;
-      window.open(url);
-      return;
-    }); 
-  }
-  function google(){
-    try {
-      var pageTracker = _gat._getTracker("UA-8130141-1");
-      pageTracker._trackPageview();
-    }catch(err){}  
-  }
-  
-  if (window.addEventListener){
-    window.addEventListener("load", afterLoad, false);
-  }else if (window.attachEvent){
-    window.attachEvent("onload", afterLoad);
-  } else {
-    window.onload = afterLoad;
-  }
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
-  function afterChart() {
-    var data = {
-      labels: ['Python', 'Java', 'C', 'JavaScript', 'Scala', 'Clojure'],
-      datasets: [{
-        backgroundColor: '#8bb8ef',
-        data: [
-          4, 7, 3, 3, 3, 4, 0
-        ]
-      }]
-    }
+  <!-- Custom styles for this template -->
+  <link href="css/resume.min.css" rel="stylesheet">
 
-    options = {
-      title: {
-          display: true,
-          text: 'Languages'
-        },
-        legend: {
-            display: false
-         },
-         scales: {
-            xAxes: [{
-                display: false
-            }]
-        }
-    }
-    var ctx = document.getElementById("langChart");
-    ctx.height = 86;
-
-    var myBarChart = new Chart(ctx, {
-        type: 'horizontalBar',
-        data: data,
-        options: options
-    });
-
-   data = {
-      labels: ['Redis', 'KDB', 'JMS', 'ION', 'MongoDB', 'Sybase', 'Linux', 'Git'],
-      datasets: [{
-        backgroundColor: '#9cd38b',
-        data: [
-          5, 6, 8, 7, 5, 6, 7, 8, 0
-        ]
-      }]
-    }
-
-    options = {
-      title: {
-          display: true,
-          text: 'Tools'
-        },
-        legend: {
-            display: false
-         },
-         scales: {
-            xAxes: [{
-                display: false
-            }]
-        }
-    }
-
-    var ctx = document.getElementById("toolsChart");
-    ctx.height = 116;
-
-    myToolsChart = new Chart(ctx, {
-        type: 'horizontalBar',
-        data: data,
-        options: options
-    });
-  
-  }
-})();
-</script>
 </head>
 
-<body>
+<body id="page-top">
 
-<div id="resumecontainer">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Katie Kroik</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+      </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<header>
-<h1>Katie Kroik Lifshitz</h1>
-<span><a href="www.linkedin.com/in/katie-kroik">LinkedIn</a></span><br>
-<span><a href="mailto:katie.kroik@gmail.com">katiekroik@gmail.com</a></span><br>
-<span><a href="log.html">Nerdy Resume Here</a></span>
-<!-- <p><a href="log.html" class="resumeLink">Nerdy Resume Here</a><p> -->
-</header>
+  <div class="container-fluid p-0">
 
-<section id="skills_section">
-  <h2>Experience</h2>
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">Katie
+          <span class="text-primary">Kroik</span>
+        </h1>
+        <div class="subheading mb-5">(908) 392-2135 ·
+          <a href="mailto:name@email.com">katiekroik@gmail.com</a>
+        </div>
+        <p class="lead mb-5">A quick learner, good collaborator, and software developer.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/katie-kroik/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/katiekroik">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.facebook.com/katiekroik">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </section>
 
-  <article class="project">
-    <span class="proj_link">
-    <strong>Assistant Vice President - Software Developer</strong></span>
-    <el class="right" style="float: right;">July 2018-present</el>
-    <br>
-    <el>Citigroup, Global Spread Products (GSP) Algo</el>
-    <el class="right" style="float: right;">New York, NY</el>
-    <ul>
-      <li>Coordinated with a global team of 6 to make enhancements to the GSP Algo systems</li>
-      <li>Connected the automated market maker to 4 additional venues and High Yield Instruments</li>
-      <li>Enhanced the pricer and automated market maker processes to handle new requirements</li>
-      <li>Technologies: Java 8, KDB, Scala, Clojure, Redis, JMS</li>
-    </ul>
-  </article>
+    <hr class="m-0">
 
-  <article class="project">
-    <span class="proj_link">
-    <strong>Technology Analyst - Software Developer</strong></span>
-    <el class="right" style="float: right;">2017-2018</el>
-    <br>
-    <el>Citigroup, Rates Distribution</el>
-    <el class="right" style="float: right;">New York, NY</el>
-    <ul>
-      <li>Made enhancements to the distribution service as well as auto negotiator service.</li>
-      <li>Enhanced offerings for the US Treasury, Agency, MBS, and Swaps desks.</li>
-      <li>Analyzed and improved the average auto-response latency by 200% for US Treasuries.</li>
-      <li>Technologies: Java, Spring, ION</li>
-    </ul>
-  </article>
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <h2 class="mb-5">Experience</h2>
 
-  <article class="project">
-    <span class="proj_link">
-      <strong>Technology Analyst - Software Developer</strong></span>
-      <el class="right" style="float: right;">2016-2017</el>
-      <br>
-    <el>Citigroup, Credit eTrading</el>
-    <el class="right" style="float: right;">Jersey City, NJ</el>
-    <ul>
-      <li>Built a offering service that sends live prices to various exchanges for Credit instruments.</li>
-      <li>Helped create an auto executor component that makes decisions on trades based on certain conditions.</li>
-      <li>Technologies: Java 8, Scala, JMS, Kafka, Redis, Disruptor Framework</li>
-    </ul>
-  </article>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Software Developer - Associate Vice President</h3>
+            <div class="subheading mb-3">Citigroup - <i>GSP Algo Technology</i></div>
+            <li>Drove enhancements to the GSP Auto Market Maker (AMM) alongisde a team of 6 global developers</li>
+            <li>Connected the AMM to additional venues, HY securities & feeds</li>
+            <li>Worked with quants to enhance performance of the system</li>
+            <li>Coordinated with the global eTrading team to ensure stability</li>
+            <span class="text-primary">Technologies: </span><span>Java 8, KDB, Scala, Clojure, Redis, JMS</span>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">July 2017 - Present</span>
+          </div>
+        </div>
 
-  <article class="project">
-    <span class="proj_link">
-      <strong>Junior Network Security Analyst</strong></span>
-      <el class="right" style="float: right;">2014-2016</el>
-      <br>
-    <el>New York University, Technology Security Services</el>
-    <el class="right" style="float: right;">New York, NY</el>
-    <ul>
-      <li>Worked in a small team of 5 to monitor NYU's network to detect viruses and configure forensic hardware during critical incidents</li>
-      <li>Technologies: Python, Linux Scripting, ArcSight</li>
-    </ul>
-  </article>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Software Developer - Analyst</h3>
+            <div class="subheading mb-3">Citigroup - <i>Rates eTrading Technology</i></div>
+            <li>Worked with a team of 4 to iteratively enhance the trading flow</li>
+            <li>Improved the time for an automatic response by 600%</li>
+            <li>Enhanced price streaming & auto RFQ negotiation </li>
+            <li>Automated the trading of new securities, now traded electronically & automatically</li>
+            <span class="text-primary">Technologies: </span><span>Technologies: Java, Spring, ION</span>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">September 2016 - July 2017</span>
+          </div>
+        </div>
 
-  <article class="project">
-    <span class="proj_link">
-      <strong>Summer Technology Analyst</strong></span>
-      <el class="right" style="float: right;">Summer 2015</el>
-      <br>
-    <el>Citigroup, Client Analytics</el>
-    <el class="right" style="float: right;">Jersey City, NY</el>
-    <ul>
-      <li>Developed along with the client analytics team to aggregate customer data in a customizable and analyzable format.</li>
-      <li>Technologies: JS, HTML, CSS, Spring Boot (Java), Sybase</li>
-    </ul>
-  </article>
-</section>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Software Developer - Analyst</h3>
+            <div class="subheading mb-3">Citigroup - <i>Credit eTrading Technology</i></div>
+            <li>Collaborated in a team of 2 to create a caching service</li>
+            <li>Incorporated tiering and size adjustments into a offering system</li>
+            <li>Built a common distribution service, used across markets</li>
+            <li>Developed an offering and trading service for retail venues</li>
+            <li>Attended HR event planning sessions and participated in four recruiting events</li>
+            <span class="text-primary">Technologies: </span><span>Java 8, Scala, JMS, Kafka, Redis, Disruptor Framework</span>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">June 2015 - September 2016</span>
+          </div>
+        </div>
 
-<section>
-  <h2>Education</h2>
-  <article class="project">
-    <span><strong>New York University</strong></span>
-    <el class="right" style="float: right;">New York, NY</el>
-    <br>
-    <span>Bachelor's in Computer Science</span>
-    <el class="right" style="float: right;">3.7 GPA</el>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Jr Network Security Analyst</h3>
+            <div class="subheading mb-3">NYU Technology Security Services</div>
+            <li>Worked in a small team of 5 to monitor NYU's network to detect viruses and configure forensic hardware during critical incidents</li>
+            <span class="text-primary">Technologies: </span><span>Python, Linux Scripting, ArcSight</span>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">February 2014 - May 2016</span>
+          </div>
+        </div>
+      </div>
 
-    <br>
-    <span>Minor in Music</span>
-  </article>
-</section>
+    </section>
 
-<section>
-  <h2>Skills</h2>
+    <hr class="m-0">
 
-  <canvas id="langChart"></canvas>
-  <canvas id="toolsChart"></canvas>
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+      <div class="w-100">
+        <h2 class="mb-5">Education</h2>
 
-<!--   <article class="skills">
-    <strong>Strong skills</strong>
-    <p>Java 8, Python</span>
-  </article>
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">New York University</h3>
+            <div class="subheading mb-3">Bachelor of Arts</div>
+            <div>Computer Science</div>
+            <p>GPA: 3.65</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">September 2013 - May 2016</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <article class="skills">
-    <strong>Moderate</strong>
-    <p>C, Scala JavaScript, HTML5, CSS3, Node</span>
-  </article>
+    <hr class="m-0">
 
-  <article class="skills">
-    <strong>Tools and Skills</strong>
-    <p>Redis, JMS, ION, MongoDB, Sybase, <br>
-    Linux, Windows, Git, TeamCity, uDeploy, <br>
-    IntelliJ, Eclipse, JIRA, Agile, Scrum</p>
-  </article> -->
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+      <div class="w-100">
+        <h2 class="mb-5">Skills</h2>
 
-</section>
+        <div class="subheading mb-3">Programming Languages &amp; Tools</div>
+          <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Strong skills in Java 8 and Python</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Familiar with Javascript, HTML, and CSS</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Some knowledge of Scala and Clojure</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Worked with databases, such as Sybase, Mongo, KDB</li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Experience with JMS and ION messaging, as well as distributed caches, like Redis</li>
+        </ul>
+      </div>
+    </section>
 
-<div id="body_popup">
-<a class="close">[X] Close</a>
-</div>
+    <hr class="m-0">
 
-</div>
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
+      <div class="w-100">
+        <h2 class="mb-5">Awards &amp; Certifications</h2>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            Founders Day Award - NYU</li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            Deans List - NYU</li>
+          <li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/resume.min.js"></script>
+
 </body>
+
 </html>
